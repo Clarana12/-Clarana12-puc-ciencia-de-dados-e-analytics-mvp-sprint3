@@ -34,29 +34,29 @@ O objetivo deste projeto é examinar e analisar diferentes facetas da educação
 - Onde estão localizadas as escolas nas terras indígenas?
 - Qual é a taxa de evasão nas escolas indígenas e como ela se compara às escolas não indígenas?
 - Qual é a média de equipamentos tecnológicos por estado nas escolas com educação indígena?
-Qual percentual de escolas em áreas indígenas tem acesso à internet, segmentadas por estado?
-Em que língua são ensinadas as matérias nas escolas indígenas e como é que isso se relaciona com a preservação das línguas maternas tribais?
-A presença de computadores nas escolas indígenas tem alguma influência na taxa de evasão?
-Essas questões são fundamentais para compreender a realidade da educação indígena no Brasil e para direcionar esforços e políticas que visem melhorar essa importante área da educação.
+- Qual percentual de escolas em áreas indígenas tem acesso à internet, segmentadas por estado?
+- Em que língua são ensinadas as matérias nas escolas indígenas e como é que isso se relaciona com a preservação das línguas maternas tribais?
+- A presença de computadores nas escolas indígenas tem alguma influência na taxa de evasão?
+- Essas questões são fundamentais para compreender a realidade da educação indígena no Brasil e para direcionar esforços e políticas que visem melhorar essa importante área da educação.
 
-## The Project
-### 1. Data Search
-The data search was carried out through the brazilian government website (https://www.gov.br/inep/pt-br/acesso-a-informacao), where tables related to the school census of Brazil in 2022 were sought. Two tables were found to be part of the analysis:
+## O projeto
+### 1. Pesquisa de dados
+A busca de dados foi realizada por meio do site do governo brasileiro ( https://www.gov.br/inep/pt-br/acesso-a-informacao ), onde foram buscadas tabelas relacionadas ao censo escolar do Brasil em 2022. Duas tabelas foram encontradas para fazer parte da análise:
 - [Microdata from the School Census of Education in Brazil 2022](https://docs.google.com/spreadsheets/d/1er1GJqNIxP_sw-0k_DF3SqBpDyo0XOLU/edit?usp=sharing&ouid=105765042535713670711&rtpof=true&sd=true)
 - [School Dropout Rate 2022](https://docs.google.com/spreadsheets/d/1g02tYUN2sTgARp9_JTlF7RUMj3RhHHaZ/edit?usp=sharing&ouid=105765042535713670711&rtpof=true&sd=true)
 
-*Note: the website is in portugese (PT-BR).*
+Nota: o site está em português (PT-BR).
 
-The first table refers to various information about schools in Brazil (school code, internet availability, classrooms, etc.), with 385 columns. The second one relates to the school performance rate (grades, dropout rate, failure rate, etc.), with 12 columns. **The datasets are not stored on GitHub but on Google Drive due to the size of the files.**
+A primeira tabela se refere a várias informações sobre escolas no Brasil (código da escola, disponibilidade de internet, salas de aula, etc.), com 385 colunas. A segunda se refere à taxa de desempenho escolar (notas, taxa de evasão, taxa de reprovação, etc.), com 12 colunas. **Os conjuntos de dados não são armazenados no GitHub, mas no Google Drive devido ao tamanho dos arquivos.**
 
 
-### 2. Data Collection
-Data collection was carried out by downloading two tables directly from the official government website. This step was crucial to ensure that the data used is accurate and reliable since government sources are recognized as a primary source of educational information. The decision to obtain the data directly from the government website was made to ensure that the collected information aligns with the official sources available.
+### 2. Coleta de dados
+A coleta de dados foi realizada por meio do download de duas tabelas diretamente do site oficial do governo. Esta etapa foi crucial para garantir que os dados utilizados sejam precisos e confiáveis, uma vez que as fontes governamentais são reconhecidas como uma fonte primária de informação educacional. A decisão de obter os dados diretamente do site do governo foi tomada para garantir que a informação recolhida esteja alinhada com as fontes oficiais disponíveis.
 
-#### 2.1 Definition of Cloud Computing System
+#### Definição de Sistema de Computação em Nuvem
 The choice of `Azure` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/azure_logo.png" alt="drawing" width="40"/> as the cloud computing system for this project was based on its global reputation as one of the leading cloud platforms in the world. Additionally, Azure is known for its excellent integration with widely used tools such as Power BI, facilitating data analysis. The Azure platform also stands out for its robust security and scalability, ensuring data protection and flexibility.
 
-#### 2.2 Storage Resources
+#### 2.2 Recursos de armazenamento
 Initially, a free Azure account was created for academic purposes. Here, the following resources were created in order:
 - `A Resource Group` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/resource_group_icon.png" alt="drawing" width="40"/> a logical container that helps manage and organize related resources in Azure
 - `Storage Account` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/storage_account_icon.png" alt="drawing" width="40"/> an Azure resource that provides cloud storage for files, using Azure Data Lake Storage Gen2 <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/adls_icon.png" alt="drawing" width="40"/>
@@ -73,10 +73,10 @@ Initially, a free Azure account was created for academic purposes. Here, the fol
 
 
 
-### 3. Modeling and Loading
+### 3. Modelagem e Carregamento
 Data modeling is a fundamental process in the field of computer science and information management. The main purpose of data modeling is to ensure that data is organized, stored, and managed efficiently and accurately to meet the specific needs of an organization or project. **Here, Modeling and Loading are in the same topic because a Data Lake system will be directly used, storing the data by layers.** 
 
-#### 3.1 Data Lake and Databricks Connection
+#### 3.1 Conexão de Data Lake e Databricks
 Now, it is necessary to perform checks on the transformations made to the raw data. For this, the Azure Databricks feature will be used.
 To create a connection between the Data Lake and Databricks, the following resources need to be created:
 - `Databricks` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/dbx_icon.png" alt="drawing" width="40"/> a cloud-based data analytics platform that combines big data and advanced analytics resources
@@ -104,7 +104,7 @@ Where:
 
 Once this is done, there is a connection between Databricks and the Data Lake. Now it is possible to create tables and populate them with data from the Lake.
 
-#### 3.2 Schema Creation
+#### 3.2 Criação de Esquema
 Within Databricks, for organizational bias, it will be necessary to create schemas to store the analysis tables. One schema will be created for each layer of the Data Lake. To do this, simply open a notebook and use the following SQL commands:
 
 ```py
@@ -115,7 +115,7 @@ CREATE SCHEMA silver;
 CREATE SCHEMA gold;
 ```
 
-#### 3.3 Creation of Bronze Layer Tables
+#### 3.3 Criação de tabelas de camadas de bronze
 In Databricks itself, a notebook will be opened to check the data quality present in the Bronze layer. For this, the use of SPARK to read the data in CSV stored as BLOBS will be used in conjunction with the creation of views:
 
 **Table microdata_basic_education_2022**
@@ -163,7 +163,7 @@ OPTIONS (
 Note: data types have not been defined yet because they are raw data. They will be defined in the Silver layer.
 
 
-#### 3.4 ETL - Extract, Transform and Load (Bronze - Silver)
+#### ETL - Extrair, Transformar e Carregar (Bronze - Prata)
 After inserting the raw data into the Bronze layer, selecting the columns, noticing some data inconsistencies, and creating the tables, the next step is to perform the transformations. For this task, the `Data Factory` resource <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/azure-data-factory2539.jpg" alt="drawing" width="40"/>, was used, as it is a visual and easy-to-use tool, and the required transformations are not advanced. The language used by this resource is called "Data Flow Expression Language." This language allows you to define data transformations using a syntax similar to SQL and includes functions and operators to perform transformation, filtering, projection, and much more. Below are the transformations used in Data Factory:
 
 ![ETL - Bronze para Silver](https://github.com/bbucalonserra/data_engineering/blob/main/pictures/ETL_bronze_to_silver.PNG)
@@ -176,7 +176,7 @@ Description of the transformations:
 - `SINK`  to send the transformed data back to the Data Lake, but now stored in the Silver layer/container
 
 
-#### 3.5 Creation of Silver Layer Tables
+#### 3.5 Criação de Tabelas de Camada Prata
 The next step is to analyze the resulting data from the ETL process from the Bronze to Silver layer. To do this, it will be necessary to create the new tables after the ETL in Databricks already with the  **data typology defined and the variables of null or not null as well**:
 
 **Table microdata_basic_education_2022**
@@ -247,7 +247,7 @@ OPTIONS (
 )
 ```
 
-#### 3.6 ETL - Extract, Transform and Load (Silver - Gold)
+#### ETL - Extrair, Transformar e Carregar (Prata - Ouro)
 Now, the second and final ETL will be performed, which will be related to the Silver layer to Gold. Here, the join of the two tables was made through the School Code column (1:1), the total sum of equipment per school was calculated (since for the analysis, it is only interesting to know the total quantity and not separated by type of equipment), and some more unused columns were removed:
 
 ![ETL - Silver para Gold](https://github.com/bbucalonserra/data_engineering/blob/main/pictures/ETL_silver_to_gold.PNG)
@@ -259,7 +259,7 @@ Description of transformations:
 - `DERIVED COLUMN`  to remove any remaining special characters
 - `SINK`  to send the transformed data back to the Data Lake, but now stored in the Gold layer/container
 
-#### 3.7 Creation of Gold Layer Tables
+#### 3.7 Criação de tabelas de camadas de ouro
 Finally, it is now possible to perform the final analysis in a much more practical, fast, and consistent way, since we only have usable columns according to the business rules of the analyses.
 
 ``` py
@@ -306,7 +306,7 @@ OPTIONS (
 )
 ```
 
-#### 3.8 Data Catalog
+#### 3.8 Catálogo de Dados
 A data catalog is a tool that organizes and describes information about available datasets, providing details such as origin, structure, meaning, and relationship between them. It is essential for the management and efficient use of data in an organization. Below is the catalog for the final table in the Gold layer:
 
 
@@ -345,11 +345,11 @@ A data catalog is a tool that organizes and describes information about availabl
 
 
 
-### 4. Analysis
+### 4. Análise
 Data analysis is an essential practice in an increasingly digital and information-driven world. It plays a fundamental role in various areas, from the business world to academic research. The primary goal of major technology companies is to become increasingly data-driven, meaning they are guided by data. In this final stage, the analysis will focus on education in indigenous lands in Brazil.
 
 
-#### 4.1 Data Quality
+#### 4.1 Qualidade dos dados
 Before delving into the analysis itself, it is crucial to perform an assessment of the data quality contained in the gold layer (final layer) to comprehensively understand how these data may influence the final analyses to be conducted. In this context, our attention will be dedicated to identifying possible inconsistencies or flaws in the data, aiming to ensure that subsequent analyses are based on reliable information.
 
 There are still some issues with the data quality for certain columns.
@@ -360,7 +360,7 @@ The columns **COMPUTERS** and **ADMINISTRATIVE_COMPUTERS** are also null, possib
 For the remaining data, no issues were found. However, it would be interesting to remove some columns to improve data processing in queries since not all columns were used.
 
 
-#### 4.2 Problem Resolution
+#### 4.2 Resolução de Problemas
 In this section, an analysis and answers to the questions raised regarding indigenous education in Brazil will be presented. Through graphical representations and analysis, insights will be provided regarding education in indigenous lands.
 Throughout this section, there will be charts and analyses addressing key questions, including the location of schools in indigenous lands, dropout rates, availability of technological equipment, internet access, and language of instruction. For all analyses below, the `SQL` (Structured Query Language) was used.
 
@@ -528,11 +528,10 @@ Therefore, most indigenous schools in Brazil adopt a bilingual approach, teachin
 </details>
 
 
-### 5. Self Assessment
-The project was conducted with an extremely detailed approach, resulting in documentation that I consider excellent. Every line of code and step of the cloud computing system was explained, including not only what was done. This transparency and clarity significantly contributed to my understanding of the process.
+### 5. Autoavaliação
+O projeto foi conduzido com uma abordagem extremamente detalhada, resultando em uma documentação que considero excelente. Cada linha de código e passo do sistema de computação em nuvem foi explicado, incluindo não apenas o que foi feito. Essa transparência e clareza contribuíram significativamente para meu entendimento do processo.
 
-Also, the development of this work was integrated with studies, covering detailed explanations of the types of data engineering performed to use Azure, creation of tables, ETL processes and analysis. This correlation between the practical project and the theoretical foundation was very important, providing a deeper and contextualized understanding of the entire analytical process.
+Além disso, o desenvolvimento deste trabalho foi integrado com estudos, abrangendo explicações detalhadas dos tipos de engenharia de dados realizados para utilização do Azure, criação de tabelas, processos de ETL e análises. Essa correlação entre o projeto prático e a fundamentação teórica foi muito importante, proporcionando um entendimento mais profundo e contextualizado de todo o processo analítico.
 
-The cloud computing system presented the greatest challenge. Yet, I gleaned invaluable insights and a good data lake environment, enhancing my technical prowess and problem-solving skills. Despite its difficulty, navigating the cloud proved huge step in my studies, equipping me with the knowledge and confidence to tackle future endeavors.
+O sistema de computação em nuvem apresentou o maior desafio. No entanto, colhi insights inestimáveis ​​e um bom ambiente de data lake, aprimorando minha destreza técnica e habilidades de resolução de problemas. Apesar da dificuldade, navegar na nuvem provou ser um grande passo em meus estudos, equipando-me com o conhecimento e a confiança para enfrentar empreendimentos futuros.
 
-**Additionally, I'm proud to share that my project received a perfect score of `10` of `10` (MAXIMUM SCORE) from the esteemed professors at the university.**
