@@ -1,11 +1,11 @@
-# Data Engineering Project
-A data engineering project involves designing, constructing, and maintaining the infrastructure necessary for the collection, storage, processing, and analysis of data. These projects often require expertise in programming languages like Python and usage of technologies like cloud-based solutions such as Azure, AWS or Google Cloud Platform. Data engineering is crucial for enabling organizations to derive insights, make data-driven decisions and build data-driven applications.
+# Projeto de Engenharia de Dados
+Um projeto de engenharia de dados envolve projetar, construir e manter a infraestrutura necessária para a coleta, armazenamento, processamento e análise de dados. Esses projetos geralmente exigem experiência em linguagens de programação como Python e uso de tecnologias como soluções baseadas em nuvem, como Azure, AWS ou Google Cloud Platform. A engenharia de dados é crucial para permitir que as organizações obtenham insights, tomem decisões baseadas em dados e criem aplicativos baseados em dados.
 
-# Index
-1. [Objective](#objective)
-2. [Problem Definition](#problem-definition)
-3. [The Project](#the-project)
-   - [1. Data Search](#1-data-search)
+# Índice
+1. [Objetivo](#objetivo)
+2. [Definição do Problema](#definicao-do-problema)
+3. [O Projeto](#o-projeto)
+   - [1. Pesquisa de Dados](#1-data-search)
    - [2. Data Collection](#2-data-collection)
      - [2.1 Definition of Cloud Computing System](#21-definition-of-cloud-computing-system)
      - [2.2 Storage Resources](#22-storage-resources)
