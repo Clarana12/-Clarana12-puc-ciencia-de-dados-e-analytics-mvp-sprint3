@@ -28,7 +28,7 @@ Um projeto de engenharia de dados envolve projetar, construir e manter a infraes
 Education is a crucial aspect of human and social development, playing a fundamental role in creating more just and egalitarian societies. Brazil, with its diversified cultural composition and numerous ethnic groups, including indigenous communities that contribute significantly to the nation's identity, requires special consideration for indigenous education. It is important to prioritize the preservation of cultural traditions and the empowerment of native communities.
 
 
-## Objective
+## Objetivo
 The objective of this project is to examine and analyze different facets of education in indigenous schools in Brazil. The focus will be on existing educational data. Through this analysis, it is intended to address important issues that will provide insights into the current situation of indigenous education in the country and highlight areas that require attention for improvements. Throughout this investigation, we will seek to answer the following crucial questions:
 
 - Where are the schools located in indigenous lands?
