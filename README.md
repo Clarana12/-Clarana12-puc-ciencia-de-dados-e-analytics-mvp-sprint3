@@ -5,40 +5,39 @@ Um projeto de engenharia de dados envolve projetar, construir e manter a infraes
 1. [Objetivo](#objetivo)
 2. [Definição do Problema](#definicao-do-problema)
 3. [O Projeto](#o-projeto)
-   - [1. Pesquisa de Dados](#1-data-search)
-   - [2. Data Collection](#2-data-collection)
-     - [2.1 Definition of Cloud Computing System](#21-definition-of-cloud-computing-system)
-     - [2.2 Storage Resources](#22-storage-resources)
-   - [3. Modeling and Loading](#3-modeling-and-loading)
-     - [3.1 Data Lake and Databricks Connection](#31-data-lake-and-databricks-connection)
-     - [3.2 Schema Creation](#32-schema-creation)
-     - [3.3 Creation of Bronze Layer Tables](#33-creation-of-bronze-layer-tables)
-     - [3.4 ETL - Extract, Transform and Load (Bronze - Silver)](#34-etl---extract-transform-and-load-bronze---silver)
-     - [3.5 Creation of Silver Layer Tables](#35-creation-of-silver-layer-tables)
-     - [3.6 ETL - Extract, Transform and Load (Silver - Gold)](#36-etl---extract-transform-and-load-silver---gold)
-     - [3.7 Creation of Gold Layer Tables](#37-creation-of-gold-layer-tables)
-     - [3.8 Data Catalog](#38-data-catalog)
-   - [4. Analysis](#4-analysis)
-     - [4.1 Data Quality](#41-data-quality)
-     - [4.2 Problem Resolution](#42-problem-resolution)
-   - [5. Self Assessment](#5-self-assessment)
+   - [1. Pesquisa de Dados](#1-pesquisa-de-dados)
+   - [2. Coleta de Dados](#2-coleta-de-dados)
+     - [2.1 Definição de Sistema de Computação em Nuvem](#21-definizao-de-sistema-de-computacao-em-nuvem)
+     - [2.2 Recursos de armazenamento](#22-recursos-de-armazenamento)
+   - [3. Modelagem e Carregamento](#3-modelagem-e-carregamento)
+     - [3.1 Conexão de Data Lake e Databricks](#31-conexao-de-data-lake-e-databricks)
+     - [3.2 Criação de Esquema](#32-criacao-de-esquema)
+     - [3.3 Criação de tabelas de camadas de bronze](#33-criacao-de-tabelas-de-camadas-de-bronze)
+     - [3.4 ETL - Extrair, Transformar e Carregar (Bronze - Prata)](#34-etl-extrair-transformar-carregar-bronze-prata)
+     - [3.5 Criação de Tabelas de Camada Prata](#35-criacao-de-tabelas-de-camada-prata)
+     - [3.6 ETL - Extrair, Transformar e Carregar (Prata - Ouro)](#36-etl---extrair-trasformar-e-carregar-prata-ouro)
+     - [3.7 Criação de tabelas de camadas de ouro](#37-criacao-de-tabelas-de-camadas-de-ouro)
+     - [3.8 Catálogo de Dados](#38-catalogo-de-dados)
+   - [4. Análise](#4-analise)
+     - [4.1 Qualidade dos dados](#41-qualidade-de-dados)
+     - [4.2 Resolução de Problemas](#42-resulucao-de-problema)
+   - [5. Autoavaliação](#5-auto-avaliacao)
 
 
-## Problem Definition
-Education is a crucial aspect of human and social development, playing a fundamental role in creating more just and egalitarian societies. Brazil, with its diversified cultural composition and numerous ethnic groups, including indigenous communities that contribute significantly to the nation's identity, requires special consideration for indigenous education. It is important to prioritize the preservation of cultural traditions and the empowerment of native communities.
+## Definição de problema
+A educação é um aspecto crucial do desenvolvimento humano e social, desempenhando um papel fundamental na criação de sociedades mais justas e igualitárias. O Brasil, com sua composição cultural diversificada e numerosos grupos étnicos, incluindo comunidades indígenas que contribuem significativamente para a identidade da nação, requer consideração especial para a educação indígena. É importante priorizar a preservação das tradições culturais e o empoderamento das comunidades nativas.
 
 
 ## Objetivo
-The objective of this project is to examine and analyze different facets of education in indigenous schools in Brazil. The focus will be on existing educational data. Through this analysis, it is intended to address important issues that will provide insights into the current situation of indigenous education in the country and highlight areas that require attention for improvements. Throughout this investigation, we will seek to answer the following crucial questions:
+O objetivo deste projeto é examinar e analisar diferentes facetas da educação em escolas indígenas no Brasil. O foco será em dados educacionais existentes. Por meio desta análise, pretende-se abordar questões importantes que fornecerão insights sobre a situação atual da educação indígena no país e destacarão áreas que requerem atenção para melhorias. Ao longo desta investigação, buscaremos responder às seguintes questões cruciais:
 
-- Where are the schools located in indigenous lands?
-- What is the dropout rate in indigenous schools and how does it compare to non-indigenous schools?
-- What is the average number of technological equipment per state in schools with indigenous education?
-- What percentage of schools in indigenous areas have internet access, segmented by state?
-- In which language are subjects taught in indigenous schools, and how does this relate to the preservation of tribal mother tongues?
-- Does the presence of computers in indigenous schools have any influence on the dropout rate?
-
-These questions are fundamental to understanding the reality of indigenous education in Brazil and to directing efforts and policies aimed at improving this important area of education.
+- Onde estão localizadas as escolas nas terras indígenas?
+- Qual é a taxa de evasão nas escolas indígenas e como ela se compara às escolas não indígenas?
+- Qual é a média de equipamentos tecnológicos por estado nas escolas com educação indígena?
+Qual percentual de escolas em áreas indígenas tem acesso à internet, segmentadas por estado?
+Em que língua são ensinadas as matérias nas escolas indígenas e como é que isso se relaciona com a preservação das línguas maternas tribais?
+A presença de computadores nas escolas indígenas tem alguma influência na taxa de evasão?
+Essas questões são fundamentais para compreender a realidade da educação indígena no Brasil e para direcionar esforços e políticas que visem melhorar essa importante área da educação.
 
 ## The Project
 ### 1. Data Search
