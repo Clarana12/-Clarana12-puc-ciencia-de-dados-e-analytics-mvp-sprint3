@@ -1,5 +1,5 @@
-# Projeto de Engenharia de Dados
-Um projeto de engenharia de dados envolve projetar, construir e manter a infraestrutura necessária para a coleta, armazenamento, processamento e análise de dados. Esses projetos geralmente exigem experiência em linguagens de programação como Python e uso de tecnologias como soluções baseadas em nuvem, como Azure, AWS ou Google Cloud Platform. A engenharia de dados é crucial para permitir que as organizações obtenham insights, tomem decisões baseadas em dados e criem aplicativos baseados em dados.
+# Projeto de Engenharia de Dados **Melhorar o texto**
+Um projeto de engenharia de dados com foco no Databricks envolve o design, construção e manutenção da infraestrutura essencial para coleta, armazenamento, processamento e análise de dados. Esse projeto requer habilidades em linguagens como R e Python, além do uso do GitHub para controle de versão. A engenharia de dados desempenha um papel crucial ao capacitar organizações a extrair insights, tomar decisões baseadas em dados e desenvolver aplicativos orientados por dados.
 
 # Índice
 1. [Objetivo](#objetivo)
@@ -46,9 +46,9 @@ A pesquisa de dados foi realizada utilizando informações disponíveis no site 
 
 Foram selecionadas as seguintes tabelas para análise:
 
-QS World University Rankings 2025: **Colocar o caminho do github**
+QS World University Rankings 2025:[Top Universities](https://raw.githubusercontent.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/main/qs-world-rankings-2025.csv)
 
-Esta tabela apresenta uma visão completa das classificações das universidades em 2025, incluindo várias métricas e indicadores essenciais para avaliar a excelência acadêmica, diversidade internacional, impacto da pesquisa e empregabilidade. **Verificar a necessidade de colocar os dados da base**
+Esta tabela apresenta uma visão completa das classificações das universidades em 2025, incluindo várias métricas e indicadores essenciais para avaliar a excelência acadêmica, diversidade internacional, impacto da pesquisa e empregabilidade.
 
 Nota: o site está em inglês (EN).
 
@@ -74,38 +74,30 @@ O conjunto de dados abrange diversas métricas importantes, tais como:
 
 Essas métricas oferecem insights valiosos sobre o panorama global das instituições de ensino superior, facilitando a análise comparativa e a tomada de decisões informadas por várias partes interessadas, incluindo estudantes, educadores, decisores políticos e empregadores.
 
-
 #### Definição de Sistema de Computação em Nuvem
-The choice of `Azure` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/azure_logo.png" alt="drawing" width="40"/> as the cloud computing system for this project was based on its global reputation as one of the leading cloud platforms in the world. Additionally, Azure is known for its excellent integration with widely used tools such as Power BI, facilitating data analysis. The Azure platform also stands out for its robust security and scalability, ensuring data protection and flexibility.
+Para este projeto, o Databricks será a plataforma principal de processamento e análise de dados na nuvem. A escolha do Databricks como plataforma baseia-se em sua capacidade robusta de processamento distribuído e análise de dados em escala. Esta ferramenta é essencial para viabilizar o processamento eficiente e a extração de insights a partir dos dados utilizados no projeto de engenharia de dados.
 
 #### 2.2 Recursos de armazenamento
-Initially, a free Azure account was created for academic purposes. Here, the following resources were created in order:
-- `A Resource Group` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/resource_group_icon.png" alt="drawing" width="40"/> a logical container that helps manage and organize related resources in Azure
-- `Storage Account` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/storage_account_icon.png" alt="drawing" width="40"/> an Azure resource that provides cloud storage for files, using Azure Data Lake Storage Gen2 <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/adls_icon.png" alt="drawing" width="40"/>
-- Bronze, Silver, and Gold Containers
+Inicialmente, uma conta community foi criada no Databricks para fins acadêmicos. Aqui estão os recursos criados em ordem:
 
-**In this project, it is going to be used the Medallion architecture for a data lake**. The Medallion architecture offers a structured and efficient approach to managing and processing vast amounts of data. By employing this architecture, the objective is to streamline data ingestion, storage and retrieval processes while ensuring scalability and reliability. With the Medallion architecture at the core of the data lake, it is anticipated an enhanced data accessibility, improved analytics capabilities and greater agility in extracting insights to drive informed decision-making. With this setup, the collected data was stored in the Bronze container. Subsequently, after performing ETL, the data will be stored in the Silver layer and, finally, in the Gold layer. The definition of each used layer was:
-- Bronze: raw data in the format of collection, such as JSON, CSV, XLS, Parquet
-- Silver: cleaned and transformed data, removing unwanted columns, special characters, and spaces
-- Gold: organized data, with joins between tables if necessary, and business rules applied according to defined metrics / questions that need to be answered
+- Uma conta de armazenamento no Databricks, que fornece armazenamento em nuvem para arquivos, usando o Databricks File System (DBFS).
+- Pastas de bronze, prata e ouro foram configuradas no Databricks para categorização e gerenciamento eficiente dos dados conforme sua importância e utilização no projeto de engenharia de dados.
+  
+Neste projeto, será implementada a arquitetura Medallion para o data lake utilizando o Databricks. Essa arquitetura oferece uma abordagem estruturada e eficiente para gerenciar e processar grandes volumes de dados. Ao empregar a arquitetura Medallion, o objetivo é otimizar os processos de ingestão, armazenamento e recuperação de dados, assegurando escalabilidade e confiabilidade. Com o data lake centrado na arquitetura Medallion, espera-se melhorar a acessibilidade aos dados, fortalecer as capacidades analíticas e aumentar a agilidade na geração de insights para suportar decisões informadas.
 
-<div align="center">
-  <img src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/containers_lake.PNG"/>
-</div>
-
-
+**Camadas do Data Lake:**
+**Bronze:** Armazenamento de dados brutos no formato de coleção, como JSON, CSV, XLS, Parquet, organizados em pastas no Databricks.
+**Prata:** Dados limpos e transformados, com remoção de colunas indesejadas, caracteres especiais e espaços, também organizados em pastas no Databricks.
+**Ouro:** Dados organizados com aplicação de junções entre tabelas e regras de negócio conforme métricas e perguntas definidas para facilitar a análise e tomada de decisões, armazenados em pastas no Databricks.
 
 ### 3. Modelagem e Carregamento
-Data modeling is a fundamental process in the field of computer science and information management. The main purpose of data modeling is to ensure that data is organized, stored, and managed efficiently and accurately to meet the specific needs of an organization or project. **Here, Modeling and Loading are in the same topic because a Data Lake system will be directly used, storing the data by layers.** 
+A modelagem de dados é um processo essencial no campo da ciência da computação e gerenciamento de informações. Seu propósito fundamental é organizar, armazenar e gerenciar dados de maneira eficiente e precisa para atender às necessidades específicas de um projeto ou organização. Neste contexto, a Modelagem e o Carregamento de dados serão discutidos juntos, uma vez que um sistema Data Lake será diretamente utilizado, armazenando os dados em diferentes camadas no Databricks.
 
 #### 3.1 Conexão de Data Lake e Databricks
-Now, it is necessary to perform checks on the transformations made to the raw data. For this, the Azure Databricks feature will be used.
-To create a connection between the Data Lake and Databricks, the following resources need to be created:
-- `Databricks` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/dbx_icon.png" alt="drawing" width="40"/> a cloud-based data analytics platform that combines big data and advanced analytics resources
-- `Registration App` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/app_reg_icon.jpeg" alt="drawing" width="30"/> the entity representing an application or service that wants to access resources in the Azure platform. It is an identifier for an application or service that wants to make changes in the Microsoft cloud
-- `Key Vault` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/key%20vault%20icon.png" alt="drawing" width="40"/> a key and secret management service
+Para realizar verificações nas transformações feitas nos dados brutos, será utilizado o Databricks como plataforma de análise de dados baseada em nuvem, que combina big data e recursos avançados de análise.
+Após configurar o ambiente no Databricks, será criado um notebook para executar as verificações necessárias nas transformações dos dados brutos.rvice
 
-With the resources created, just go to Databricks, create a notebook, and use the following Spark code:
+**Com os recursos criados, basta ir no Databricks, criar um notebook e utilizar o seguinte código Spark:**
 
 ```py
 service_credential = dbutils.secrets.get(scope="<scope>",key="<service-credential-key>")
@@ -117,17 +109,17 @@ spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account>.dfs.core
 spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account>.dfs.core.windows.net", "https://login.microsoftonline.com/<directory-id>/oauth2/token")
 ```
 
-Where:
-- scope = secret scope, created in Databricks itself
-- service-credential-key = credential key of Key Vault
-- storage-account = Storage Account
-- application-id = application ID of App Registration
-- directory-id = directory ID of App Registration
+Onde:
 
-Once this is done, there is a connection between Databricks and the Data Lake. Now it is possible to create tables and populate them with data from the Lake.
+escopo = escopo secreto, criado no próprio Databricks
+service-credential-key = chave de credencial do Key Vault
+storage-account = Conta de armazenamento
+application-id = ID do aplicativo de registro do aplicativo
+directory-id = ID do diretório de registro do aplicativo
+Feito isso, há uma conexão entre o Databricks e o Data Lake. Agora é possível criar tabelas e preenchê-las com dados do Lake.
 
 #### 3.2 Criação de Esquema
-Within Databricks, for organizational bias, it will be necessary to create schemas to store the analysis tables. One schema will be created for each layer of the Data Lake. To do this, simply open a notebook and use the following SQL commands:
+Dentro do Databricks, por viés organizacional, será necessário criar esquemas para armazenar as tabelas de análise. Será criado um esquema para cada camada do Data Lake. Para isso, basta abrir um notebook e utilizar os seguintes comandos SQL:
 
 ```py
 CREATE SCHEMA bronze;
@@ -138,7 +130,7 @@ CREATE SCHEMA gold;
 ```
 
 #### 3.3 Criação de tabelas de camadas de bronze
-In Databricks itself, a notebook will be opened to check the data quality present in the Bronze layer. For this, the use of SPARK to read the data in CSV stored as BLOBS will be used in conjunction with the creation of views:
+No próprio Databricks, será aberto um notebook para verificar a qualidade dos dados presentes na camada Bronze. Para isso, será utilizado o uso do SPARK para ler os dados em CSV armazenados como BLOBS em conjunto com a criação de views:
 
 **Table microdata_basic_education_2022**
 
@@ -182,24 +174,22 @@ OPTIONS (
 )
 ```
 
-Note: data types have not been defined yet because they are raw data. They will be defined in the Silver layer.
-
+Nota: os tipos de dados ainda não foram definidos porque são dados brutos. Eles serão definidos na camada Silver.
 
 #### ETL - Extrair, Transformar e Carregar (Bronze - Prata)
-After inserting the raw data into the Bronze layer, selecting the columns, noticing some data inconsistencies, and creating the tables, the next step is to perform the transformations. For this task, the `Data Factory` resource <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/azure-data-factory2539.jpg" alt="drawing" width="40"/>, was used, as it is a visual and easy-to-use tool, and the required transformations are not advanced. The language used by this resource is called "Data Flow Expression Language." This language allows you to define data transformations using a syntax similar to SQL and includes functions and operators to perform transformation, filtering, projection, and much more. Below are the transformations used in Data Factory:
+Após inserir os dados brutos na camada Bronze, selecionar as colunas, perceber algumas inconsistências nos dados e criar as tabelas, o próximo passo é executar as transformações. Para essa tarefa, foi utilizado o Data Factoryrecurso desenho, por ser uma ferramenta visual e fácil de usar, e as transformações necessárias não são avançadas. A linguagem usada por esse recurso é chamada de "Data Flow Expression Language". Essa linguagem permite que você defina transformações de dados usando uma sintaxe semelhante ao SQL e inclui funções e operadores para executar transformação, filtragem, projeção e muito mais. Abaixo estão as transformações usadas no Data Factory:
 
 ![ETL - Bronze para Silver](https://github.com/bbucalonserra/data_engineering/blob/main/pictures/ETL_bronze_to_silver.PNG)
 
 
-Description of the transformations:
-- Data collection from the Data Lake
-- `SELECT` to select the columns used in the analysis
-- `DERIVED COLUMN` to remove special and strange characters from the columns
-- `SINK`  to send the transformed data back to the Data Lake, but now stored in the Silver layer/container
-
+Descrição das transformações:
+- Coleta de dados do Data Lake
+- `SELECT` para selecionar as colunas usadas na análise
+- `DERIVED COLUMN` para remover caracteres especiais e estranhos das colunas
+- `SINK`  para enviar os dados transformados de volta ao Data Lake, mas agora armazenados na camada/contêiner Silver
 
 #### 3.5 Criação de Tabelas de Camada Prata
-The next step is to analyze the resulting data from the ETL process from the Bronze to Silver layer. To do this, it will be necessary to create the new tables after the ETL in Databricks already with the  **data typology defined and the variables of null or not null as well**:
+O próximo passo é analisar os dados resultantes do processo ETL da camada Bronze para Silver. Para isso, será necessário criar as novas tabelas após o ETL no Databricks já com a tipologia de dados definida e as variáveis ​​de null ou not null também :
 
 **Table microdata_basic_education_2022**
 ```py
@@ -270,19 +260,19 @@ OPTIONS (
 ```
 
 #### ETL - Extrair, Transformar e Carregar (Prata - Ouro)
-Now, the second and final ETL will be performed, which will be related to the Silver layer to Gold. Here, the join of the two tables was made through the School Code column (1:1), the total sum of equipment per school was calculated (since for the analysis, it is only interesting to know the total quantity and not separated by type of equipment), and some more unused columns were removed:
+Agora, será realizado o segundo e último ETL, que será relacionado da camada Silver para Gold. Aqui, foi feita a junção das duas tabelas através da coluna School Code (1:1), foi calculada a soma total de equipamentos por escola (pois para a análise, interessa apenas saber a quantidade total e não separar por tipo de equipamento), e foram removidas mais algumas colunas não utilizadas:
 
 ![ETL - Silver para Gold](https://github.com/bbucalonserra/data_engineering/blob/main/pictures/ETL_silver_to_gold.PNG)
 
-Description of transformations:
-- Data collection from the Data Lake
-- `JOIN`  to merge both tables
-- `SELECT`  to remove some columns
-- `DERIVED COLUMN`  to remove any remaining special characters
-- `SINK`  to send the transformed data back to the Data Lake, but now stored in the Gold layer/container
+Descrição das transformações:
+- Coleta de dados do Data Lake
+- `JOIN`  para mesclar as duas tabelas
+- `SELECT`  para remover algumas colunas
+- `DERIVED COLUMN` para remover quaisquer caracteres especiais restantes
+- `SINK` para enviar os dados transformados de volta ao Data Lake, mas agora armazenados na camada/contêiner Gold
 
 #### 3.7 Criação de tabelas de camadas de ouro
-Finally, it is now possible to perform the final analysis in a much more practical, fast, and consistent way, since we only have usable columns according to the business rules of the analyses.
+Por fim, agora é possível realizar a análise final de forma muito mais prática, rápida e consistente, pois só temos colunas utilizáveis ​​de acordo com as regras de negócio das análises.
 
 ``` py
 CREATE TABLE gold.EDUCATION_RETENTION_SCHOOLS_JOINED
@@ -329,7 +319,7 @@ OPTIONS (
 ```
 
 #### 3.8 Catálogo de Dados
-A data catalog is a tool that organizes and describes information about available datasets, providing details such as origin, structure, meaning, and relationship between them. It is essential for the management and efficient use of data in an organization. Below is the catalog for the final table in the Gold layer:
+Um catálogo de dados é uma ferramenta que organiza e descreve informações sobre conjuntos de dados disponíveis, fornecendo detalhes como origem, estrutura, significado e relacionamento entre eles. É essencial para o gerenciamento e uso eficiente de dados em uma organização. Abaixo está o catálogo para a tabela final na camada Gold:
 
 
 | ID | VARIABLE | DESCRIPTION | TYPE | MINIMUM | MAXIMUM |
@@ -368,23 +358,16 @@ A data catalog is a tool that organizes and describes information about availabl
 
 
 ### 4. Análise
-Data analysis is an essential practice in an increasingly digital and information-driven world. It plays a fundamental role in various areas, from the business world to academic research. The primary goal of major technology companies is to become increasingly data-driven, meaning they are guided by data. In this final stage, the analysis will focus on education in indigenous lands in Brazil.
-
+A análise de dados é uma prática essencial em um mundo cada vez mais digital e orientado por informações. Ela desempenha um papel fundamental em diversas áreas, do mundo empresarial à pesquisa acadêmica. O principal objetivo das grandes empresas de tecnologia é se tornarem cada vez mais orientadas por dados, ou seja, elas são guiadas por dados. Nesta etapa final, a análise se concentrará na educação em terras indígenas no Brasil.
 
 #### 4.1 Qualidade dos dados
-Before delving into the analysis itself, it is crucial to perform an assessment of the data quality contained in the gold layer (final layer) to comprehensively understand how these data may influence the final analyses to be conducted. In this context, our attention will be dedicated to identifying possible inconsistencies or flaws in the data, aiming to ensure that subsequent analyses are based on reliable information.
+Antes de nos aprofundarmos na análise propriamente dita, é crucial realizar uma avaliação da qualidade dos dados contidos na camada ouro (camada final) para entender de forma abrangente como esses dados podem influenciar as análises finais a serem conduzidas. Nesse contexto, nossa atenção será dedicada à identificação de possíveis inconsistências ou falhas nos dados, visando garantir que as análises subsequentes sejam baseadas em informações confiáveis.
 
-There are still some issues with the data quality for certain columns.
-The column **MUNICIPALITY_NAME** is still obtaining the value "�" for letters with accents or for the letter "ç" ("still" because this issue was addressed in the ETL from Bronze to Silver layer). Since these are only naming problems, it will not affect the answers provided below. However, in the case of creating a data visualization dashboard, for example, a map chart with "�" characters, Power BI will not be able to identify the municipality's location.
-The column **BASIC_EDUCATION_APPROVAL_RATE** has null values throughout the ETL process for some reason. This prevents analyses related to student approval in indigenous schools, a comparison between approvals with students in indigenous areas and regular schools from being performed.
-The column **EXISTING_ROOMS** also has null values, possibly due to some stage of the ETL process. This prevents analyses on the number of students per classroom in schools in indigenous areas or checks if the infrastructure of schools in indigenous areas meets the population's needs.
-The columns **COMPUTERS** and **ADMINISTRATIVE_COMPUTERS** are also null, possibly due to some stage of the ETL process. This prevents answering questions regarding computers in indigenous schools ("Does the presence of computers in indigenous schools have any influence on the dropout rate?") and may bias the results regarding technological equipment.
-For the remaining data, no issues were found. However, it would be interesting to remove some columns to improve data processing in queries since not all columns were used.
+Ainda há alguns problemas com a qualidade dos dados para certas colunas. A coluna MUNICIPALITY_NAME ainda está obtendo o valor "�" para letras com acentos ou para a letra "ç" ("ainda" porque esse problema foi abordado no ETL da camada Bronze para Prata). Como esses são apenas problemas de nomenclatura, não afetarão as respostas fornecidas abaixo. No entanto, no caso de criar um painel de visualização de dados, por exemplo, um gráfico de mapa com caracteres "�", o Power BI não conseguirá identificar a localização do município. A coluna BASIC_EDUCATION_APPROVAL_RATE tem valores nulos em todo o processo de ETL por algum motivo. Isso impede que análises relacionadas à aprovação de alunos em escolas indígenas, uma comparação entre aprovações com alunos em áreas indígenas e escolas regulares sejam realizadas. A coluna EXISTING_ROOMS também tem valores nulos, possivelmente devido a alguma etapa do processo de ETL. Isso impede análises sobre o número de alunos por sala de aula em escolas em áreas indígenas ou verificações se a infraestrutura das escolas em áreas indígenas atende às necessidades da população. As colunas COMPUTERS e ADMINISTRATIVE_COMPUTERS também são nulas, possivelmente devido a alguma etapa do processo ETL. Isso impede responder perguntas sobre computadores em escolas indígenas ("A presença de computadores em escolas indígenas tem alguma influência na taxa de evasão?") e pode enviesar os resultados sobre equipamentos tecnológicos. Para os dados restantes, nenhum problema foi encontrado. No entanto, seria interessante remover algumas colunas para melhorar o processamento de dados em consultas, uma vez que nem todas as colunas foram utilizadas.
 
 
 #### 4.2 Resolução de Problemas
-In this section, an analysis and answers to the questions raised regarding indigenous education in Brazil will be presented. Through graphical representations and analysis, insights will be provided regarding education in indigenous lands.
-Throughout this section, there will be charts and analyses addressing key questions, including the location of schools in indigenous lands, dropout rates, availability of technological equipment, internet access, and language of instruction. For all analyses below, the `SQL` (Structured Query Language) was used.
+Nesta seção, serão apresentadas uma análise e respostas às questões levantadas sobre a educação indígena no Brasil. Por meio de representações gráficas e análises, serão fornecidos insights sobre a educação em terras indígenas. Ao longo desta seção, haverá gráficos e análises abordando questões-chave, incluindo a localização das escolas em terras indígenas, taxas de evasão, disponibilidade de equipamentos tecnológicos, acesso à internet e idioma de instrução. Para todas as análises abaixo, SQLfoi usada a (Structured Query Language).
 
 
 **1. Where are located the indiginous schools in Brazil?**
