@@ -25,19 +25,20 @@ Um projeto de engenharia de dados envolve projetar, construir e manter a infraes
 
 
 ## Definição de problema
-A educação é um aspecto crucial do desenvolvimento humano e social, desempenhando um papel fundamental na criação de sociedades mais justas e igualitárias. O Brasil, com sua composição cultural diversificada e numerosos grupos étnicos, incluindo comunidades indígenas que contribuem significativamente para a identidade da nação, requer consideração especial para a educação indígena. É importante priorizar a preservação das tradições culturais e o empoderamento das comunidades nativas.
+A educação superior desempenha um papel vital na formação de indivíduos qualificados e na promoção do desenvolvimento econômico e social. A qualidade das instituições de ensino superior é frequentemente avaliada por rankings globais, como o QS World Rankings, que consideram diversos critérios, incluindo reputação acadêmica, empregabilidade de graduados, proporção professor-aluno, e internacionalização. No entanto, interpretar e utilizar esses rankings pode ser um desafio tanto para instituições quanto para estudantes e empregadores. Compreender como diferentes fatores influenciam a posição das instituições nesses rankings é crucial para identificar pontos fortes e áreas que precisam de melhorias.
 
 
 ## Objetivo
-O objetivo deste projeto é examinar e analisar diferentes facetas da educação em escolas indígenas no Brasil. O foco será em dados educacionais existentes. Por meio desta análise, pretende-se abordar questões importantes que fornecerão insights sobre a situação atual da educação indígena no país e destacarão áreas que requerem atenção para melhorias. Ao longo desta investigação, buscaremos responder às seguintes questões cruciais:
+O objetivo deste projeto é analisar os dados da base QS-WORLD-RANKINGS-2025 para identificar os fatores que mais impactam a posição das instituições de ensino superior nos rankings. Através dessa análise, pretendemos responder às seguintes perguntas:
 
-- Onde estão localizadas as escolas nas terras indígenas?
-- Qual é a taxa de evasão nas escolas indígenas e como ela se compara às escolas não indígenas?
-- Qual é a média de equipamentos tecnológicos por estado nas escolas com educação indígena?
-- Qual percentual de escolas em áreas indígenas tem acesso à internet, segmentadas por estado?
-- Em que língua são ensinadas as matérias nas escolas indígenas e como é que isso se relaciona com a preservação das línguas maternas tribais?
-- A presença de computadores nas escolas indígenas tem alguma influência na taxa de evasão?
-- Essas questões são fundamentais para compreender a realidade da educação indígena no Brasil e para direcionar esforços e políticas que visem melhorar essa importante área da educação.
+- Quais fatores têm a maior correlação com a posição geral de uma instituição no ranking QS?
+- Como a localização geográfica influencia a posição no ranking?
+- Qual é a relação entre a reputação acadêmica e do empregador e a posição no ranking?
+- De que forma a proporção professor-aluno e as citações por corpo docente afetam a posição da instituição?
+- Como a presença de professores e alunos internacionais contribui para a classificação?
+- Quais são os impactos dos resultados de emprego e do desempenho em sustentabilidade nas posições das instituições?
+
+Através destas análises, buscamos fornecer insights valiosos para instituições de ensino superior, estudantes, e formuladores de políticas educacionais, ajudando a melhorar a qualidade e a competitividade das instituições de ensino superior em nível global.
 
 ## O projeto
 ### 1. Pesquisa de dados
