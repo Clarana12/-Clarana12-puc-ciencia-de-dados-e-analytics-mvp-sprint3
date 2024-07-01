@@ -42,17 +42,38 @@ Através destas análises, buscamos fornecer insights valiosos para instituiçõ
 
 ## O projeto
 ### 1. Pesquisa de dados
-A busca de dados foi realizada por meio do site do governo brasileiro ( https://www.gov.br/inep/pt-br/acesso-a-informacao ), onde foram buscadas tabelas relacionadas ao censo escolar do Brasil em 2022. Duas tabelas foram encontradas para fazer parte da análise:
-- [Microdata from the School Census of Education in Brazil 2022](https://docs.google.com/spreadsheets/d/1er1GJqNIxP_sw-0k_DF3SqBpDyo0XOLU/edit?usp=sharing&ouid=105765042535713670711&rtpof=true&sd=true)
-- [School Dropout Rate 2022](https://docs.google.com/spreadsheets/d/1g02tYUN2sTgARp9_JTlF7RUMj3RhHHaZ/edit?usp=sharing&ouid=105765042535713670711&rtpof=true&sd=true)
+A pesquisa de dados foi realizada utilizando informações disponíveis no site [Top Universities](https://www.topuniversities.com/world-university-rankings), que permite a seleção de diversos filtros para personalizar as classificações universitárias globais. No entanto, para a simplicidade e uniformidade da análise, optou-se por utilizar o conjunto de dados disponibilizado pelo Kaggle, que oferece uma compilação abrangente e padronizada das classificações para o ano de 2025.
 
-Nota: o site está em português (PT-BR).
+Foram selecionadas as seguintes tabelas para análise:
 
-A primeira tabela se refere a várias informações sobre escolas no Brasil (código da escola, disponibilidade de internet, salas de aula, etc.), com 385 colunas. A segunda se refere à taxa de desempenho escolar (notas, taxa de evasão, taxa de reprovação, etc.), com 12 colunas. **Os conjuntos de dados não são armazenados no GitHub, mas no Google Drive devido ao tamanho dos arquivos.**
+QS World University Rankings 2025: **Colocar o caminho do github**
 
+Esta tabela apresenta uma visão completa das classificações das universidades em 2025, incluindo várias métricas e indicadores essenciais para avaliar a excelência acadêmica, diversidade internacional, impacto da pesquisa e empregabilidade. **Verificar a necessidade de colocar os dados da base**
+
+Nota: o site está em inglês (EN).
+
+**Os conjuntos de dados foram armazenados no GitHub.**
 
 ### 2. Coleta de dados
-A coleta de dados foi realizada por meio do download de duas tabelas diretamente do site oficial do governo. Esta etapa foi crucial para garantir que os dados utilizados sejam precisos e confiáveis, uma vez que as fontes governamentais são reconhecidas como uma fonte primária de informação educacional. A decisão de obter os dados diretamente do site do governo foi tomada para garantir que a informação recolhida esteja alinhada com as fontes oficiais disponíveis.
+A coleta de dados foi realizada baixando o arquivo CSV intitulado qs-classificações mundiais-2025.csv do Kaggle. Esta etapa foi crucial para garantir a precisão e a confiabilidade dos dados, uma vez que o Kaggle é amplamente reconhecido como uma plataforma de compartilhamento de dados confiável e de alta qualidade.
+
+O conjunto de dados abrange diversas métricas importantes, tais como:
+
+- Classificação da instituição
+- Nome
+- Localização
+- Categoria de tamanho
+- Pontuações de reputação acadêmica e do empregador
+- Proporção professor-aluno
+- Citações por corpo docente
+- Proporções de professores e alunos internacionais
+- Presença em redes de pesquisa internacionais
+- Resultados de emprego
+- Desempenho de sustentabilidade
+- Pontuação geral do QS
+
+Essas métricas oferecem insights valiosos sobre o panorama global das instituições de ensino superior, facilitando a análise comparativa e a tomada de decisões informadas por várias partes interessadas, incluindo estudantes, educadores, decisores políticos e empregadores.
+
 
 #### Definição de Sistema de Computação em Nuvem
 The choice of `Azure` <img align="center" src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/azure_logo.png" alt="drawing" width="40"/> as the cloud computing system for this project was based on its global reputation as one of the leading cloud platforms in the world. Additionally, Azure is known for its excellent integration with widely used tools such as Power BI, facilitating data analysis. The Azure platform also stands out for its robust security and scalability, ensuring data protection and flexibility.
