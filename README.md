@@ -31,12 +31,13 @@ A educação superior desempenha um papel vital na formação de indivíduos qua
 ## Objetivo
 O objetivo deste projeto é analisar os dados da base QS-WORLD-RANKINGS-2025 para identificar os fatores que mais impactam a posição das instituições de ensino superior nos rankings. Através dessa análise, pretendemos responder às seguintes perguntas:
 
-- Quais fatores têm a maior correlação com a posição geral de uma instituição no ranking QS?
-- Como a localização geográfica influencia a posição no ranking?
-- Qual é a relação entre a reputação acadêmica e do empregador e a posição no ranking?
-- De que forma a proporção professor-aluno e as citações por corpo docente afetam a posição da instituição?
-- Como a presença de professores e alunos internacionais contribui para a classificação?
-- Quais são os impactos dos resultados de emprego e do desempenho em sustentabilidade nas posições das instituições?
+- Quais são as 10 melhores instituições no ranking geral do QS em 2025? **destacar os melhores**
+- Qual é a proporção média de professores para alunos nas instituições listadas? **tem professor suficiente pra aluno**
+- Quais são as instituições com a maior pontuação em reputação acadêmica e reputação do empregador? **destacar os melhores**
+- Como a localização geográfica influencia a posição no ranking? **verificar se a localização geografica impacta**
+- **Quais fatores têm a maior correlação com a posição geral de uma instituição no ranking QS?**
+- Existe uma correlação entre a proporção de professores internacionais e a pontuação geral do QS?
+- Como a presença em redes de pesquisa internacionais se correlaciona com a reputação acadêmica?
 
 Através destas análises, buscamos fornecer insights valiosos para instituições de ensino superior, estudantes, e formuladores de políticas educacionais, ajudando a melhorar a qualidade e a competitividade das instituições de ensino superior em nível global.
 
