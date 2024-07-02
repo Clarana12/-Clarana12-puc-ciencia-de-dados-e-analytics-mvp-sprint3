@@ -24,7 +24,7 @@ Um projeto de engenharia de dados com foco no Databricks envolve o design, const
    - [5. Autoavaliação](#5-auto-avaliacao)
 
 
-## Definição de problema
+## Definição do problema
 A educação superior desempenha um papel vital na formação de indivíduos qualificados e na promoção do desenvolvimento econômico e social. A qualidade das instituições de ensino superior é frequentemente avaliada por rankings globais, como o QS World Rankings, que consideram diversos critérios, incluindo reputação acadêmica, empregabilidade de graduados, proporção professor-aluno, e internacionalização. No entanto, interpretar e utilizar esses rankings pode ser um desafio tanto para instituições quanto para estudantes e empregadores. Compreender como diferentes fatores influenciam a posição das instituições nesses rankings é crucial para identificar pontos fortes e áreas que precisam de melhorias.
 
 ## Objetivo
