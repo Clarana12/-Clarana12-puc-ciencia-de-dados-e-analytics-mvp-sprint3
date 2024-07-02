@@ -272,8 +272,9 @@ Nesta seção, serão apresentadas análises e respostas às questões levantada
 <details>
   <summary>Show Answer</summary>
   
-<img src=" https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/1-10MelhoresInstituicoes.png" align="left"
-     alt="melhoresinstituicoes">   
+<img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/1-10MelhoresInstituicoes.png" align="left"
+     alt="melhores_instituicoes">   
+
 
 Query:
 ```
@@ -307,8 +308,8 @@ Essas universidades são líderes em suas respectivas áreas, refletindo um comp
 <details>
   <summary>Show Answer</summary>
   
-<img src="https://github.com/bbucalonserra/data_engineering/blob/main/graphics/Taxa_de_Abandono.PNG" align="left"
-     alt="taxa_de_abandono">
+<img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/2-M%C3%A9diaAlunosporProfessores.png)" align="left"
+     alt="media_de_alunos_professores">
 
 Query:
 ```
@@ -328,8 +329,8 @@ FROM  gold.qs_world_rankings_final;
 <details>
   <summary>Show Answer</summary>
 
-  <img src="https://github.com/bbucalonserra/data_engineering/blob/main/graphics/media_equip_escolas_por_estado.PNG" align="left"
-     alt="media_equipamentos_estado">
+  <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/3-ReputacaoAlunoAcademia.png" align="left"
+     alt="reputacao_aluno_academia">
 
 Query:
 ```
@@ -366,9 +367,8 @@ ORDER BY (t1.Academic_Reputation + t2.Employer_Reputation) DESC;
 <details>
   <summary>Show Answer</summary>
 
-
-  <img src="https://github.com/bbucalonserra/data_engineering/blob/main/graphics/porcentagem_escolas_indigenas_com_internet.PNG" align="left"
-     alt="internet_por_estado">
+  <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/4-MediaQSporLocalidade.png" align="left"
+     alt="qs-por_localizacao">
 
 Query:
 ``` 
@@ -390,9 +390,8 @@ ORDER BY Avg_QS_OverallScore DESC;
 <details>
   <summary>Show Answer</summary>
 
-
-  <img src="https://github.com/bbucalonserra/data_engineering/blob/main/graphics/linguas_indigenas.PNG" align="left"
-     alt="lingua_indigena">
+  <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/5-RelacaoQSPesquisaInternacional.png" align="left"
+     alt="qs_pesquisa_internacional">
 
 Query:
 ```
