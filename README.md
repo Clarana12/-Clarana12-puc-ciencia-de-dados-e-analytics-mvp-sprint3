@@ -207,7 +207,7 @@ AS
 SELECT * FROM silver_data;
 ```
 
-#### ETL - Extrair, Transformar e Carregar (Prata - Ouro)
+#### 3.6 ETL - Extrair, Transformar e Carregar (Prata - Ouro)
 Agora, será realizado o segundo e último ETL, que será relacionado da camada Silver para Gold. Aqui, foi a remoção dos dados null da coluna QS_OverallScore pois iria atrapalhar a nossa análise final e nossas perguntas que serão respondidas:
 
 Descrição das transformações:
