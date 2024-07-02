@@ -1,5 +1,5 @@
 # Projeto de Engenharia de Dados 
-Um projeto de engenharia de dados com foco no Databricks envolve o design, construção e manutenção da infraestrutura essencial para coleta, armazenamento, processamento e análise de dados. Esse projeto requer habilidades em linguagens como R e SQL, além do uso do GitHub para controle de versão. A engenharia de dados desempenha um papel crucial ao capacitar organizações a extrair insights, tomar decisões baseadas em dados e desenvolver aplicativos orientados por dados.
+Um projeto de engenharia de dados com foco no Databricks envolve o design, construção e manutenção da infraestrutura essencial para coleta, armazenamento, processamento e análise de dados. Esse projeto requer habilidades em linguagens como R e SQL, além do uso do GitHub para documentar o projeto. A engenharia de dados desempenha um papel crucial ao capacitar organizações a extrair insights, tomar decisões baseadas em dados e desenvolver aplicativos orientados por dados.
 
 # Índice
 1. [Objetivo](#objetivo)
