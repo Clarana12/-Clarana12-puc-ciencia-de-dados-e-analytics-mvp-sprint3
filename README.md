@@ -14,14 +14,14 @@ Um projeto de engenharia de dados com foco no Databricks envolve o design, const
      - [3.2 Criação de Esquema](#32-criacao-de-esquema)
      - [3.3 Criação de tabelas de camadas de bronze](#33-criacao-de-tabelas-de-camadas-de-bronze)
      - [3.4 ETL - Extrair, Transformar e Carregar (Bronze - Prata)](#34-etl-extrair-transformar-carregar-bronze-prata)
-     - [3.5 Criação de Tabelas de Camada Prata](#35-criacao-de-tabelas-de-camada-prata)
-     - [3.6 ETL - Extrair, Transformar e Carregar (Prata - Ouro)](#36-etl---extrair-trasformar-e-carregar-prata-ouro)
-     - [3.7 Criação de tabelas de camadas de ouro](#37-criacao-de-tabelas-de-camadas-de-ouro)
-     - [3.8 Catálogo de Dados](#38-catalogo-de-dados)
-   - [4. Análise](#4-analise)
-     - [4.1 Qualidade dos dados](#41-qualidade-de-dados)
-     - [4.2 Resolução de Problemas](#42-resulucao-de-problema)
-   - [5. Autoavaliação](#5-auto-avaliacao)
+     - [3.5 Criação de Tabelas de Camada Prata](#35-criação-de-tabelas-de-camada-prata)
+     - [3.6 ETL - Extrair, Transformar e Carregar (Prata - Ouro)](#36-etl---extrair-transformar-e-carregar-prata---ouro)
+     - [3.7 Criação de tabelas de camadas de ouro](#37-criação-de-tabelas-de-camadas-de-ouro)
+     - [3.8 Catálogo de Dados](#38-catálogo-de-dados)
+   - [4. Análise](#4-análise)
+     - [4.1 Qualidade dos dados](#41-qualidade-dos-dados)
+     - [4.2 Resolução de Problemas](#42-resolução-de-problemas)
+   - [5. Autoavaliação](#5-autoavaliação)
 
 
 ## Definição do problema
@@ -162,7 +162,7 @@ OPTIONS (
 
 Nota: os tipos de dados ainda não foram definidos porque são dados brutos. Eles serão definidos na camada Silver.
 
-#### ETL - Extrair, Transformar e Carregar (Bronze - Prata)
+#### 3.4 ETL - Extrair, Transformar e Carregar (Bronze - Prata)
 Após inserir os dados brutos na camada Bronze, selecionar as colunas, perceber algumas inconsistências nos dados e criar as tabelas, o próximo passo é executar as transformações. Para essa tarefa, vamos aplicar transformações para preparar os dados para análise na camada Silver, tratando valores ausentes e ajustando os tipos de dados.
 
 Abaixo estão as transformações usadas no Databricks:
