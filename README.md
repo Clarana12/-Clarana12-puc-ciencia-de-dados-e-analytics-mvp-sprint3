@@ -8,23 +8,23 @@ Um projeto de engenharia de dados com foco no Databricks envolve o design, const
    - [1. Pesquisa de Dados](#1-pesquisa-de-dados)
    - [2. Coleta de Dados](#2-coleta-de-dados)
      - [2.1 Definição de Sistema de Computação em Nuvem](#21-definição-de-sistema-de-computação-em-nuvem)
-     - [2.2 Recursos de armazenamento](#22-recursos-de-armazenamento)
+     - [2.2 Recursos de Armazenamento](#22-recursos-de-armazenamento)
    - [3. Modelagem e Carregamento](#3-modelagem-e-carregamento)
      - [3.1 Transformações no Databricks](#31-transformações-no-databricks)
      - [3.2 Criação de Esquema](#32-criação-de-esquema)
-     - [3.3 Criação de tabelas de camadas de bronze](#33-criação-de-tabelas-de-camadas-de-bronze)
+     - [3.3 Criação de Tabelas de Camadas de Bronze](#33-criação-de-tabelas-de-camadas-de-bronze)
      - [3.4 ETL - Extrair, Transformar e Carregar (Bronze - Prata)](#34-etl---extrair-transformar-e-carregar-bronze---prata)
      - [3.5 Criação de Tabelas de Camada Prata](#35-criação-de-tabelas-de-camada-prata)
      - [3.6 ETL - Extrair, Transformar e Carregar (Prata - Ouro)](#36-etl---extrair-transformar-e-carregar-prata---ouro)
-     - [3.7 Criação de tabelas de camadas de ouro](#37-criação-de-tabelas-de-camadas-de-ouro)
+     - [3.7 Criação de Tabelas de Camadas de Ouro](#37-criação-de-tabelas-de-camadas-de-ouro)
      - [3.8 Catálogo de Dados](#38-catálogo-de-dados)
    - [4. Análise](#4-análise)
-     - [4.1 Qualidade dos dados](#41-qualidade-dos-dados)
+     - [4.1 Qualidade dos Dados](#41-qualidade-dos-dados)
      - [4.2 Resolução de Problemas](#42-resolução-de-problemas)
    - [5. Autoavaliação](#5-autoavaliação)
 
 
-## Definição do problema
+## Definição do Problema
 A educação superior desempenha um papel vital na formação de indivíduos qualificados e na promoção do desenvolvimento econômico e social. A qualidade das instituições de ensino superior é frequentemente avaliada por rankings globais, como o QS World Rankings, que consideram diversos critérios, incluindo reputação acadêmica, empregabilidade de graduados, proporção professor-aluno, e internacionalização. No entanto, interpretar e utilizar esses rankings pode ser um desafio tanto para instituições quanto para estudantes e empregadores. Compreender como diferentes fatores influenciam a posição das instituições nesses rankings é crucial para identificar pontos fortes e áreas que precisam de melhorias.
 
 ## Objetivo
@@ -38,8 +38,8 @@ O objetivo deste projeto é analisar os dados da base QS-WORLD-RANKINGS-2025 par
 
 Através destas análises, buscamos fornecer insights valiosos para instituições de ensino superior, estudantes, e formuladores de políticas educacionais, ajudando a melhorar a qualidade e a competitividade das instituições de ensino superior em nível global.
 
-## O projeto
-### 1. Pesquisa de dados
+## O Projeto
+### 1. Pesquisa de Dados
 A pesquisa de dados foi realizada utilizando informações disponíveis no site [Top Universities](https://www.topuniversities.com/world-university-rankings), que permite a seleção de diversos filtros para personalizar as classificações universitárias globais. No entanto, para a simplicidade e uniformidade da análise, optou-se por utilizar o conjunto de dados disponibilizado pelo Kaggle, que oferece uma compilação abrangente e padronizada das classificações para o ano de 2025.
 
 Foram selecionadas as seguintes tabelas para análise:
@@ -52,7 +52,7 @@ Nota: o site está em inglês (EN).
 
 **Os conjuntos de dados foram armazenados no GitHub.**
 
-### 2. Coleta de dados
+### 2. Coleta de Dados
 A coleta de dados foi realizada baixando o arquivo CSV intitulado qs-classificações mundiais-2025.csv do Kaggle. Esta etapa foi crucial para garantir a precisão e a confiabilidade dos dados, uma vez que o Kaggle é amplamente reconhecido como uma plataforma de compartilhamento de dados confiável e de alta qualidade.
 
 O conjunto de dados abrange diversas métricas importantes, tais como:
@@ -75,7 +75,7 @@ Essas métricas oferecem insights valiosos sobre o panorama global das institui�
 #### 2.1 Definição de Sistema de Computação em Nuvem
 Para este projeto, o Databricks será a plataforma principal de processamento e análise de dados na nuvem. A escolha do Databricks como plataforma baseia-se em sua capacidade robusta de processamento distribuído e análise de dados em escala. Esta ferramenta é essencial para viabilizar o processamento eficiente e a extração de insights a partir dos dados utilizados no projeto de engenharia de dados.
 
-#### 2.2 Recursos de armazenamento
+#### 2.2 Recursos de Armazenamento
 Inicialmente, uma conta community foi criada no Databricks para fins acadêmicos. Aqui estão os recursos criados em ordem:
 
 - Uma conta de armazenamento no Databricks, que fornece armazenamento em nuvem para arquivos, usando o Databricks File System (DBFS).
@@ -143,12 +143,12 @@ CREATE SCHEMA silver;
 CREATE SCHEMA gold;
 ```
 
-#### 3.3 Criação de tabelas de camadas de bronze
+#### 3.3 Criação de Tabelas de Camadas de Bronze
 No próprio Databricks, será aberto um notebook para verificar a qualidade dos dados presentes na camada Bronze. Para isso, será utilizado o uso do SPARK para ler os dados em CSV armazenados em conjunto com a criação de views:
 
 **qs_world_rankings_2025**
 
-**Tabela no esquema Bronze**
+**Tabela no Esquema Bronze**
 
 ```
 %sql
@@ -189,7 +189,7 @@ WHERE `2025 Rank` IS NOT NULL
   AND `Location` IS NOT NULL;
 ```
 
-**Descrição das transformações:**
+**Descrição das Transformações:**
 - Coleta de dados do Databricks
 - `COALESCE` para substituir os valores nulos por 'Unknow' ou '0'.
 - Conversão de Tipos de Dados: As colunas numéricas são convertidas para o tipo FLOAT, e a vírgula em Citations per Faculty é substituída por um ponto para permitir a conversão correta.
@@ -225,10 +225,8 @@ FROM silver.qs_world_rankings_transformed
 WHERE QS_OverallScore IS NOT NULL;
 ```
 
-#### 3.7 Criação de tabelas de camadas de ouro
+#### 3.7 Criação de Tabelas de Camadas de ouro
 Por fim, agora é possível realizar a análise final de forma muito mais prática, rápida e consistente, pois só temos colunas utilizáveis ​​de acordo com as regras de negócio das análises.
-
-**Escrever os dados filtrados na camada Gold**
 
 ```
 %sql
@@ -259,7 +257,7 @@ Um catálogo de dados é uma ferramenta que organiza e descreve informações so
 ### 4. Análise
 A análise de dados desempenha um papel crucial em um mundo cada vez mais digital e centrado em informações, abrangendo áreas que vão desde o mundo empresarial até a pesquisa acadêmica. Empresas de tecnologia líderes buscam se orientar cada vez mais por dados. Nesta fase final, a análise se concentrará nos indicadores essenciais utilizados para avaliar a excelência acadêmica, a diversidade internacional, o impacto da pesquisa e a empregabilidade de universidades em todo o mundo.
 
-#### 4.1 Qualidade dos dados
+#### 4.1 Qualidade dos Dados
 Antes de nos aprofundarmos na análise propriamente dita, é crucial realizar uma avaliação da qualidade dos dados contidos na camada ouro (camada final) para entender de forma abrangente como esses dados podem influenciar as análises finais a serem conduzidas. Nesse contexto, nossa atenção será dedicada à identificação de possíveis inconsistências ou falhas nos dados, visando garantir que as análises subsequentes sejam baseadas em informações confiáveis.
 
 Com base na nossa ultima camada gold toda alteração e tratamento foi realizado logo para os dados restantes, nenhum problema foi encontrado e iremos aproveitar toda a camada gold. 
