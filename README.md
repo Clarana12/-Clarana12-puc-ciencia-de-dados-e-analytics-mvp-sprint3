@@ -100,39 +100,62 @@ A modelagem de dados é um processo essencial no campo da ciência da computaç�
 
 #### 3.1 Conexão de Data Lake e Databricks
 Para realizar verificações nas transformações feitas nos dados brutos, será utilizado o Databricks como plataforma de análise de dados baseada em nuvem, que combina big data e recursos avançados de análise.
-Após configurar o ambiente no Databricks, será criado um notebook para executar as verificações necessárias nas transformações dos dados brutos.rvice
+Após configurar o ambiente no Databricks, será criado um notebook para executar as verificações necessárias nas transformações dos dados brutos.
 
-**Com os recursos criados, basta ir no Databricks, criar um notebook e utilizar o seguinte código Spark:**
+Agora iremos ler os dados de um arquivo CSV armazenado no DBFS (Databricks File System) e carregando-os em um DataFrame Spark usando sparklyr. 
+A seguir, vou detalhar como essa parte se encaixa no fluxo geral de ingestão e transformação de dados.
 
-```py
-service_credential = dbutils.secrets.get(scope="<scope>",key="<service-credential-key>")
+```
+%r
+# Instalar e carregar o pacote necessário
+if (!require(sparklyr)) install.packages("sparklyr")
+library(sparklyr)
 
-spark.conf.set("fs.azure.account.auth.type.<storage-account>.dfs.core.windows.net", "OAuth")
-spark.conf.set("fs.azure.account.oauth.provider.type.<storage-account>.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
-spark.conf.set("fs.azure.account.oauth2.client.id.<storage-account>.dfs.core.windows.net", "<application-id>")
-spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account>.dfs.core.windows.net", service_credential)
-spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account>.dfs.core.windows.net", "https://login.microsoftonline.com/<directory-id>/oauth2/token")
+# Conectar ao Spark
+sc <- spark_connect(method = "databricks")
+
+# Caminho correto do arquivo no DBFS
+file_path <- "dbfs:/FileStore/tables/qs_world_rankings_2025-9.csv"
+
+# Ler o arquivo CSV usando spark_read_csv
+df <- spark_read_csv(sc, name = "qsworldrankings2025", path = file_path, header = TRUE, infer_schema = TRUE)
+
+# Renomear as colunas para remover caracteres inválidos
+df <- df %>%
+  dplyr::rename_all(~gsub(" ", "_", .)) %>%
+  dplyr::rename_all(~gsub("[()]", "", .)) %>%
+  dplyr::rename_all(~gsub("-", "_", .)) %>%
+  dplyr::rename_all(~gsub("\\.", "", .)) %>%
+  dplyr::rename_all(~gsub(",", "", .))
+
+# Mostrar os primeiros registros do DataFrame após renomear colunas
+print(head(df))
 ```
 
-Onde:
-
-escopo = escopo secreto, criado no próprio Databricks
-service-credential-key = chave de credencial do Key Vault
-storage-account = Conta de armazenamento
-application-id = ID do aplicativo de registro do aplicativo
-directory-id = ID do diretório de registro do aplicativo
-Feito isso, há uma conexão entre o Databricks e o Data Lake. Agora é possível criar tabelas e preenchê-las com dados do Lake.
+Feito isso, agora é possível criar tabelas e preenchê-las com dados do DBFS.
 
 #### 3.2 Criação de Esquema
-Dentro do Databricks, por viés organizacional, será necessário criar esquemas para armazenar as tabelas de análise. Será criado um esquema para cada camada do Data Lake. Para isso, basta abrir um notebook e utilizar os seguintes comandos SQL:
+Dentro do Databricks, por viés organizacional, será necessário criar esquemas para armazenar as tabelas de análise. Será criado um esquema para cada camada do Data Lake. Para isso, basta abrir um notebook e utilizar os seguintes comandos R:
 
-```py
-CREATE SCHEMA bronze;
-
-CREATE SCHEMA silver;
-
-CREATE SCHEMA gold;
 ```
+%r
+# Verificar se o database bronze existe e criar se não existir
+sparklyr::spark_session(sc) %>%
+  invoke("sql", "CREATE DATABASE IF NOT EXISTS bronze")
+```
+```
+%r
+# Verificar se o database silver existe e criar se não existir
+sparklyr::spark_session(sc) %>%
+  invoke("sql", "CREATE DATABASE IF NOT EXISTS silver")
+```
+```
+%r
+# Verificar se o database gold existe e criar se não existir
+sparklyr::spark_session(sc) %>%
+  invoke("sql", "CREATE DATABASE IF NOT EXISTS gold")
+```
+
 
 #### 3.3 Criação de tabelas de camadas de bronze
 No próprio Databricks, será aberto um notebook para verificar a qualidade dos dados presentes na camada Bronze. Para isso, será utilizado o uso do SPARK para ler os dados em CSV armazenados como BLOBS em conjunto com a criação de views:
