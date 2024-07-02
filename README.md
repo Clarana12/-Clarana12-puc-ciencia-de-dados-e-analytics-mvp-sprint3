@@ -42,6 +42,8 @@ Através destas análises, buscamos fornecer insights valiosos para instituiçõ
 ### 1. Pesquisa de Dados
 A pesquisa de dados foi realizada utilizando informações disponíveis no site [Top Universities](https://www.topuniversities.com/world-university-rankings), que permite a seleção de diversos filtros para personalizar as classificações universitárias globais. No entanto, para a simplicidade e uniformidade da análise, optou-se por utilizar o conjunto de dados disponibilizado pelo Kaggle, que oferece uma compilação abrangente e padronizada das classificações para o ano de 2025.
 
+**Modelagem:** Optei por utilizar o modelo flat para estruturar os dados devido à simplicidade e eficiência que ele oferece. Com minha base de dados consistindo em uma única tabela, essa abordagem simplifica o processo de análise e consulta, eliminando a necessidade de lidar com múltiplas tabelas ou relações complexas entre elas. Isso não apenas facilita o desenvolvimento e a manutenção, mas também melhora o desempenho das operações analíticas. 
+
 Foram selecionadas as seguintes tabelas para análise:
 
 QS World University Rankings 2025:[Top Universities](https://raw.githubusercontent.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/main/qs-world-rankings-2025.csv)
