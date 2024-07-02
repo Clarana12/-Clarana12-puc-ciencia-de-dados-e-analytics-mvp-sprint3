@@ -7,7 +7,7 @@ Um projeto de engenharia de dados com foco no Databricks envolve o design, const
 3. [O Projeto](#o-projeto)
    - [1. Pesquisa de Dados](#1-pesquisa-de-dados)
    - [2. Coleta de Dados](#2-coleta-de-dados)
-     - [2.1 Definição de Sistema de Computação em Nuvem](#21-definizao-de-sistema-de-computacao-em-nuvem)
+     - [2.1 Definição de Sistema de Computação em Nuvem](#21-definição-de-sistema-de-computação-em-nuvem)
      - [2.2 Recursos de armazenamento](#22-recursos-de-armazenamento)
    - [3. Modelagem e Carregamento](#3-modelagem-e-carregamento)
      - [3.1 Conexão de Data Lake e Databricks](#31-conexao-de-data-lake-e-databricks)
