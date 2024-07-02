@@ -34,8 +34,6 @@ O objetivo deste projeto é analisar os dados da base QS-WORLD-RANKINGS-2025 par
 - Qual é a proporção média de professores para alunos nas instituições listadas? 
 - Quais são as instituições com a maior pontuação em reputação acadêmica e reputação do empregador?
 - Como a localização geográfica influencia a posição no ranking?
-- Quais fatores têm a maior correlação com a posição geral de uma instituição no ranking QS?
-- Existe uma correlação entre a proporção de professores internacionais e a pontuação geral do QS?
 - Como a presença em redes de pesquisa internacionais se correlaciona com a reputação acadêmica?
 
 Através destas análises, buscamos fornecer insights valiosos para instituições de ensino superior, estudantes, e formuladores de políticas educacionais, ajudando a melhorar a qualidade e a competitividade das instituições de ensino superior em nível global.
@@ -274,8 +272,8 @@ Nesta seção, serão apresentadas análises e respostas às questões levantada
 <details>
   <summary>Show Answer</summary>
   
-<img src="https://github.com/bbucalonserra/data_engineering/blob/main/graphics/loc_escolas_indigenas.PNG" align="left"
-     alt="loc_escola_indigena">
+<img src=" https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/1-10MelhoresInstituicoes.png" align="left"
+     alt="melhoresinstituicoes">   
 
 Query:
 ```
