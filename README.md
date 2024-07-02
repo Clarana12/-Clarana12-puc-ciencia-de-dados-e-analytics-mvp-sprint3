@@ -72,7 +72,7 @@ O conjunto de dados abrange diversas métricas importantes, tais como:
 
 Essas métricas oferecem insights valiosos sobre o panorama global das instituições de ensino superior, facilitando a análise comparativa e a tomada de decisões informadas por várias partes interessadas, incluindo estudantes, educadores, decisores políticos e empregadores.
 
-#### Definição de Sistema de Computação em Nuvem
+#### 2.1 Definição de Sistema de Computação em Nuvem
 Para este projeto, o Databricks será a plataforma principal de processamento e análise de dados na nuvem. A escolha do Databricks como plataforma baseia-se em sua capacidade robusta de processamento distribuído e análise de dados em escala. Esta ferramenta é essencial para viabilizar o processamento eficiente e a extração de insights a partir dos dados utilizados no projeto de engenharia de dados.
 
 #### 2.2 Recursos de armazenamento
