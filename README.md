@@ -92,9 +92,8 @@ Neste projeto, será implementada a arquitetura Medallion para o data lake utili
 **Ouro:** Dados organizados com aplicação de junções entre tabelas e regras de negócio conforme métricas e perguntas definidas para facilitar a análise e tomada de decisões, armazenados em pastas no Databricks.7
 
 <div align="center">
-  <img src="https://github.com/bbucalonserra/data_engineering/blob/main/pictures/containers_lake.PNG](https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/Fotos/ArquiteturaMedalhao.png"/>
+  <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/Fotos/ArquiteturaMedalhao.png"/>
 </div>
-
 
 ### 3. Modelagem e Carregamento
 A modelagem de dados é um processo essencial no campo da ciência da computação e gerenciamento de informações. Seu propósito fundamental é organizar, armazenar e gerenciar dados de maneira eficiente e precisa para atender às necessidades específicas de um projeto ou organização. Neste contexto, a Modelagem e o Carregamento de dados serão discutidos juntos, uma vez que um sistema Data Lake será diretamente utilizado, armazenando os dados em diferentes camadas no Databricks.
