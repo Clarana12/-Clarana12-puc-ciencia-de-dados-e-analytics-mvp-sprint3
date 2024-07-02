@@ -13,7 +13,7 @@ Um projeto de engenharia de dados com foco no Databricks envolve o design, const
      - [3.1 Transformações no Databricks](#31-transformações-no-databricks)
      - [3.2 Criação de Esquema](#32-criação-de-esquema)
      - [3.3 Criação de tabelas de camadas de bronze](#33-criação-de-tabelas-de-camadas-de-bronze)
-     - [3.4 ETL - Extrair, Transformar e Carregar (Bronze - Prata)](#34-etl-extrair-transformar-carregar-bronze-prata)
+     - [3.4 ETL - Extrair, Transformar e Carregar (Bronze - Prata)](#34-etl---extrair-transformar-e-carregar-bronze---prata)
      - [3.5 Criação de Tabelas de Camada Prata](#35-criação-de-tabelas-de-camada-prata)
      - [3.6 ETL - Extrair, Transformar e Carregar (Prata - Ouro)](#36-etl---extrair-transformar-e-carregar-prata---ouro)
      - [3.7 Criação de tabelas de camadas de ouro](#37-criação-de-tabelas-de-camadas-de-ouro)
