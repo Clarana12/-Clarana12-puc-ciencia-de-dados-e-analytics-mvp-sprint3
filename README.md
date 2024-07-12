@@ -336,7 +336,6 @@ FROM  gold.qs_world_rankings_final;
      alt="reputacao_aluno_academia">
 
 
-
 Query:
 ```
 %sql
