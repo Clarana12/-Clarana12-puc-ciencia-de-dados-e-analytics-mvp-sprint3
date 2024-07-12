@@ -335,6 +335,7 @@ FROM  gold.qs_world_rankings_final;
   <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/3-ReputacaoAlunoAcademia.png" align="left"
      alt="reputacao_aluno_academia">
 
+
 Query:
 ```
 %sql
@@ -373,6 +374,7 @@ ORDER BY (t1.Academic_Reputation + t2.Employer_Reputation) DESC;
   <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/4-MediaQSporLocalidade.png" align="left"
      alt="qs-por_localizacao">
 
+
 Query:
 ``` 
 %sql
@@ -395,6 +397,7 @@ ORDER BY Avg_QS_OverallScore DESC;
 
   <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/5-RelacaoQSPesquisaInternacional.png" align="left"
      alt="qs_pesquisa_internacional">
+
 
 Query:
 ```
