@@ -86,9 +86,12 @@ Inicialmente, uma conta community foi criada no Databricks para fins acadêmicos
 Neste projeto, será implementada a arquitetura Medallion para o data lake utilizando o Databricks. Essa arquitetura oferece uma abordagem estruturada e eficiente para gerenciar e processar grandes volumes de dados. Ao empregar a arquitetura Medallion, o objetivo é otimizar os processos de ingestão, armazenamento e recuperação de dados, assegurando escalabilidade e confiabilidade. Com o data lake centrado na arquitetura Medallion, espera-se melhorar a acessibilidade aos dados, fortalecer as capacidades analíticas e aumentar a agilidade na geração de insights para suportar decisões informadas.
 
 **Camadas do Data Lake:**
+
 **Bronze:** Armazenamento de dados brutos no formato de coleção, como JSON, CSV, XLS, Parquet, organizados em pastas no Databricks.
+
 **Prata:** Dados limpos e transformados, com remoção de colunas indesejadas, caracteres especiais e espaços, também organizados em pastas no Databricks.
-**Ouro:** Dados organizados com aplicação de junções entre tabelas e regras de negócio conforme métricas e perguntas definidas para facilitar a análise e tomada de decisões, armazenados em pastas no Databricks.7
+
+**Ouro:** Dados organizados com aplicação de junções entre tabelas e regras de negócio conforme métricas e perguntas definidas para facilitar a análise e tomada de decisões, armazenados em pastas no Databricks.
 
 <div align="center">
   <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/Fotos/ArquiteturaMedalhao.png"/>
