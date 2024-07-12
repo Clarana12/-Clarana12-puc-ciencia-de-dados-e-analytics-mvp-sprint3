@@ -390,7 +390,7 @@ ORDER BY Avg_QS_OverallScore DESC;
 **5. Como a presença em redes de pesquisa internacionais se correlaciona com a reputação acadêmica?**
 
 <details>
-  <summary>SMostre a Resposta</summary>
+  <summary>Mostre a Resposta</summary>
 
   <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/5-RelacaoQSPesquisaInternacional.png" align="left"
      alt="qs_pesquisa_internacional">
