@@ -310,9 +310,10 @@ Essas universidades são líderes em suas respectivas áreas, refletindo um comp
 <details>
   <summary>Mostre a Resposta</summary>
   
-<img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/2-M%C3%A9diaAlunosporProfessores.png)" align="left"
+<img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/2-M%C3%A9diaAlunosporProfessores.png" align="left"
      alt="media_de_alunos_professores">
 
+    
 Query:
 ```
 %sql
