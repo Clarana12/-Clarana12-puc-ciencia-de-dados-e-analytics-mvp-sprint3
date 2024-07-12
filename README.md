@@ -196,7 +196,6 @@ WHERE `2025 Rank` IS NOT NULL
 
 **Descrição das Transformações:**
 - Coleta de dados do Databricks
-- `COALESCE` para substituir os valores nulos por 'Unknow' ou '0'.
 - Conversão de Tipos de Dados: As colunas numéricas são convertidas para o tipo FLOAT, e a vírgula em Citations per Faculty é substituída por um ponto para permitir a conversão correta.
 - Enviamos os dados transformados de volta ao Databricks, mas agora armazenados na camada Silver
 
