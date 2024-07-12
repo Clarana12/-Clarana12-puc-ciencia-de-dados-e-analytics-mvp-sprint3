@@ -272,7 +272,7 @@ Nesta seção, serão apresentadas análises e respostas às questões levantada
 **1. Quais são as 10 melhores instituições no ranking geral do QS em 2025?**
 
 <details>
-  <summary>Show Answer</summary>
+  <summary>Mostre a Resposta</summary>
   
 <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/1-10MelhoresInstituicoes.png" align="left"
      alt="melhores_instituicoes">   
@@ -308,7 +308,7 @@ Essas universidades são líderes em suas respectivas áreas, refletindo um comp
 **2. Qual é a proporção média de professores para alunos nas instituições listadas?**
 
 <details>
-  <summary>Show Answer</summary>
+  <summary>Mostre a Resposta</summary>
   
 <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/2-M%C3%A9diaAlunosporProfessores.png)" align="left"
      alt="media_de_alunos_professores">
@@ -329,7 +329,7 @@ FROM  gold.qs_world_rankings_final;
 **3. Quais são as instituições com a maior pontuação em reputação acadêmica e reputação do empregador?**
 
 <details>
-  <summary>Show Answer</summary>
+  <summary>Mostre a Resposta</summary>
 
   <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/3-ReputacaoAlunoAcademia.png" align="left"
      alt="reputacao_aluno_academia">
@@ -367,7 +367,7 @@ ORDER BY (t1.Academic_Reputation + t2.Employer_Reputation) DESC;
 **4. Como a localização geográfica influencia a posição no ranking?**
 
 <details>
-  <summary>Show Answer</summary>
+  <summary>Mostre a Resposta</summary>
 
   <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/4-MediaQSporLocalidade.png" align="left"
      alt="qs-por_localizacao">
@@ -390,7 +390,7 @@ ORDER BY Avg_QS_OverallScore DESC;
 **5. Como a presença em redes de pesquisa internacionais se correlaciona com a reputação acadêmica?**
 
 <details>
-  <summary>Show Answer</summary>
+  <summary>SMostre a Resposta</summary>
 
   <img src="https://github.com/Clarana12/-Clarana12-puc-ciencia-de-dados-e-analytics-mvp-sprint3/blob/main/graficos/5-RelacaoQSPesquisaInternacional.png" align="left"
      alt="qs_pesquisa_internacional">
